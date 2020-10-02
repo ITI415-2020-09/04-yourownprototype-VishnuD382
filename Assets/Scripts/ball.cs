@@ -12,4 +12,17 @@ public class ball : MonoBehaviour
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity.normalized * maxSpeed;
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject collidedWith = other.gameObject;
+        if (collidedWith.tag == "goal")
+        {
+            Destroy(collidedWith);
+            Debug.Log("testing");
+        }
+    }
+
+
 }
